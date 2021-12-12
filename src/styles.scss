@@ -1,0 +1,138 @@
+$header-height: 40px;
+$header-font-size: 22px;
+$main-orange: #EBAD60;
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #21212C;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .Radio {
+    position:relative;
+    background-color: #2D2D38;
+    color: rgb(205, 211, 231);
+    border-radius: 25px;
+    box-shadow: 10px 14px 20px 1px rgba(0,0,0,0.57);
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    height:100%;
+    min-height: 500px;
+    overflow: hidden;
+    
+    header.Header {
+      background-color:$main-orange;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      height: $header-height;
+      padding-top: $header-height / 2;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      font-size: $header-font-size;
+      padding-bottom: $header-height / 2;
+    }
+    footer.Footer {
+      position:absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 20px auto 0px ;
+      padding: 0px 0 15px;
+      border-top: 1px solid #aaa;
+      background: #22222B;
+      
+      .Footer-title {
+        margin-top: 10px;
+      }
+      p {
+        font-size: $header-font-size;
+        margin: 1px;
+        font-weight: 100;
+      }
+      p:first-child {
+        padding-top: 10px;
+        color: $main-orange;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+    main::-webkit-scrollbar {
+      display:none;
+    }
+    main {
+      height: 350px;
+      overflow-y: scroll; 
+      overflow-x: scroll; 
+      -ms-overflow-style: none; 
+      scrollbar-width: none;  
+      
+      .Station {
+        border-bottom: 1px solid rgba(255,255,255,0.7);
+        margin: 0 30px;
+        .Controls {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-column-gap: 20px;
+          align-items: center;
+          justify-items: center;
+          width: 100%;
+          padding-top: 15px;
+        }
+          .ControlsOpen {
+            visibility: initial;
+            transition: all 1s ease-in-out;
+          }
+          .ControlsClose {
+            display: none;
+            visibility: hidden;
+          }
+          .ImageBox {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            img {
+              width: 100%;
+              border-radius: 50%;
+              border: 2px solid rgba(255,255,255,0.6);
+            }
+          }
+            &:first-child {
+              margin-top: 20px;
+            }
+
+          .StationInfo {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+          }
+      } 
+    } 
+  }
+}
+@media all and (min-width: 500px) {
+  .App {
+    .Radio {
+    width: 60%;
+    height: 60vH;
+    }
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .App {
+    .Radio {
+      width: 40%;
+      height: 60vH;
+    }
+  }
+}
